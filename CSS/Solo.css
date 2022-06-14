@@ -1,0 +1,25 @@
+.tag{
+    height: 50px;
+    width: 100px;
+    border-radius: 20px; 
+    background-color: white;
+    border-color: blue;
+}
+#K_Food{
+    display: none;
+}
+#J_Food{
+    display: none;
+}
+#C_Food{
+    display: none;
+}
+#W_Food{
+    display: none;
+}
+#F_Food{
+    display: none;
+}
+#etc{
+    display: none;
+}
