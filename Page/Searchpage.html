@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 뭐먹지</title>
+    <link rel="icon" type="image/png" href="./imgs/Icon.png" />
+    <script src="https://kit.fontawesome.com/13a6e4ab52.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Web_7team-main/CSS/mainpage.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/Web_7team-main/Js/mainpage.js" defer charset="utf-8"></script>
+    <script language=JavaScript charset="utf-8">
+        temp = location.href.split("?");
+        data = temp[1].split(":");
+        name = decodeURI(data[0]);
+    </script>
+    <script>
+        let all = [];
+        let Name = [""];
+        let address = [""];
+        let phone = [""];
+        let place_url = [""];
+        $.ajax({
+            method: "GET",
+            url: "https://dapi.kakao.com/v2/local/search/keyword.json?y=35.134080249513474&x=129.10317348438963&radius=20000",
+            data: { query: name, category_group_code: 'FD6'},
+            headers: {Authorization: "KakaoAK cbf18629496639b728ece4b1fcbb27f2"}
+        })
+            .done(function (data) {
+                all = data.documents
+                for (var i = 0; i < 6; i++){
+                    var name_id = "name" + i
+                    var address_id = "address" + i
+                    var phone_id = "phone" + i
+                    var place_url_id = "place_url" + i
+                    Name[i] = all[i].place_name;              
+                    address[i] = all[i].road_address_name;                  
+                    phone[i] = all[i].phone;             
+                    place_url[i] = all[i].place_url;                  
+                    document.getElementById(name_id).innerHTML=Name[i];
+                    document.getElementById(address_id).innerHTML=address[i];
+                    document.getElementById(phone_id).innerHTML=phone[i];
+                    document.getElementById(place_url_id).innerHTML=place_url[i];
+                }
+            });
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbar__logo">
+            <i class="fa-solid fa-utensils"></i>
+            <a href="/Web_7team-main/Page/mainPage.html">오늘 뭐먹지</a>
+        </div>
+    </nav>
+    <!-- Home -->
+    <section id="home">
+        <h1 id="home__title"></h1>
+        <div class="home__searchbox">
+            <form action="" method="Get">
+                <input id="search__text" type="text" name="" placeholer="Type to search">
+                <a href="#" id="search__btn">
+                    <i class="fas fa-search"></i>
+                </a>
+            </form>
+        </div>
+    </section>
+    <section id="selection">
+        <button class="selection__button" type="button">
+            <h3 id="name0"></h3>
+            <h3 id="address0"></h3>
+            <h3 id="phone0"></h3>
+            <p id="place_url0"></p>
+        </button>
+        <button class="selection__button" type="button">
+            <h3 id="name1"></h3>
+            <h3 id="address1"></h3>
+            <h3 id="phone1"></h3>
+            <p id="place_url1"></p>
+        </button>
+        <button class="selection__button" type="button">
+            <h3 id="name2"></h3>
+            <h3 id="address2"></h3>
+            <h3 id="phone2"></h3>
+            <p id="place_url2"></p>
+        </button>
+        <button class="selection__button" type="button">
+            <h3 id="name3"></h3>
+            <h3 id="address3"></h3>
+            <h3 id="phone3"></h3>
+            <p id="place_url3"></p>
+        </button>
+        <button class="selection__button" type="button">
+            <h3 id="name4"></h3>
+            <h3 id="address4"></h3>
+            <h3 id="phone4"></h3>
+            <p id="place_url4"></p>
+        </button>
+        <button class="selection__button" type="button">
+            <h3 id="name5"></h3>
+            <h3 id="address5"></h3>
+            <h3 id="phone5"></h3>
+            <p id="place_url5"></p>
+        </button>
+    </section>
+    <script>
+        document.getElementById("home__title").innerHTML=name;
+    </script>
+</body>
+</html>

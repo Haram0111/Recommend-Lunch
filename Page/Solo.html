@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테마별 식당 추천</title>
+    <link rel="icon" type="image/png" href="./imgs/Icon.png" />
+    <script src="https://kit.fontawesome.com/13a6e4ab52.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/mainpage.css">
+    <link rel="stylesheet" href="../CSS/Solo.css">
+    <script src="../Js/Solo.js"></script>
+    <script>
+        var options = [];
+    </script>
+    
+</head>
+<body>
+    <nav id="navbar">
+        <div class="navbar__logo">
+            <i class="fa-solid fa-utensils"></i>
+            <a href="/Web_7team-main/Page/mainPage.html">오늘 뭐먹지</a>
+        </div>
+    </nav>
+    <section id="home">
+        <h1 id="home__title">부경대 혼밥 추천</h1>
+        <div class="home__searchbox">
+            <form action="" method="Get">
+                <input id="search__text" type="text" placeholer="Type to search">
+                <a href="#" id="search__btn" onclick="sendFunc()">
+                    <i class="fas fa-search"></i>
+                </a>
+            </form>
+        </div>
+    </section>
+    <br>
+    <button class="tag" onclick=SKFood()>한식</button>
+    <button class="tag" onclick=SJFood()>일식</button>
+    <button class="tag" onclick=SCFood()>중식</button>
+    <button class="tag" onclick=SWFood()>양식</button>
+    <button class="tag" onclick=SFFood()>분식</button>
+    <button class="tag" onclick=SEFood()>기타</button>
+    <div id="K_Food">
+        <pre>
+            비빔밥: 다다키친, 먹돌이식당
+            덮밥: 오공복이
+            알밥: 알촌
+            두루치기: 먹돌이식당, 부뚜막
+            고갈비: 부뚜막
+            불백: 옹헤야
+            고기정식: 레츠리너
+            김치찜: 마을회관
+            국밥: 영진돼지국밥, 큰집돼지국밥, 형제국밥
+            보쌈: 싸움의고수
+        </pre>
+    </div>
+    <div id="J_Food">
+        <pre>
+            유부초밥: 정직유부
+            라멘: 겐쇼심야라멘, 하코네, 오이시라멘, 호메이켄, 코코노카
+            소바: 호메이켄, 코코노카
+            일식덮밥: 다온스시&덮밥, 규심, 교토돈부리, 고쿠텐
+            돈까스: 카츠안, 유미돈, 요고무무, 송영희돈까스
+            초밥: 다온스시&덮밥, 마마도마
+            샤브샤브: 샤브보트
+            카레: 고씨네, 카레온
+            연어: 연어바치
+        </pre>
+    </div>
+    <div id="C_Food">
+        <pre>
+            중국집(반점): 신서향원, 하오하오반점, 중찬, 차이나식탁, 연경
+            중화비빔밥: 연경
+            마라탕: 마라패션, 라화쿵부
+        </pre>
+    </div>
+    <div id="W_Food">
+        <pre>
+            햄버거: 맥도날드, 맘스터치, KFC 부경대점, 프랭크버거, 닛닛버거
+            피자: 피자스쿨, 피자마루
+            샌드위치: 서브웨이
+        </pre>
+    </div>
+    <div id="F_Food"> 
+        <pre>
+            칼국수: 다다키친, 얼큰이칼국수
+            떡볶이: 매운떡볶이, 청년다방, 신전떡볶이, 분식쌀롱, 땡초김밥
+            김밥: 분식쌀롱, 땡초김밥
+        </pre>
+    </div>
+    <div id="etc">
+        <pre>
+            쌀국수: 포앤스마일 락사, 라이옥
+            부리또: 엘부리또, 밀플랜비
+            밥버거: 봉구스밥버거
+            닭강정: 만만닭강정
+        </pre>
+    </div>
+</body>
