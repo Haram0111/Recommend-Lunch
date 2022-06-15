@@ -15,7 +15,7 @@ function movesolo(){
 }
 
 function moveExplain(){
-    location.href="./Explain.html"
+    location.href="./IntroKFood.html"
 }
 
 function moveMuslim(){

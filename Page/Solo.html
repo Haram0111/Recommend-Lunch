@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/mainpage.css">
     <link rel="stylesheet" href="../CSS/Solo.css">
     <script src="../Js/Solo.js"></script>
     <script>
@@ -22,29 +21,28 @@
     <nav id="navbar">
         <div class="navbar__logo">
             <i class="fa-solid fa-utensils"></i>
-            <a href="./mainPage.html">오늘 뭐먹지</a>
+            <a href="mainpage.html">오늘 뭐먹지</a>
         </div>
     </nav>
-    <section id="home">
-        <h1 id="home__title">부경대 혼밥 추천</h1>
-        <div class="home__searchbox">
-            <form action="" method="Get">
-                <input id="search__text" type="text" placeholer="Type to search">
-                <a href="#" id="search__btn" onclick="sendFunc()">
-                    <i class="fas fa-search"></i>
-                </a>
-            </form>
-        </div>
+
+    <!-- subject -->
+    <section id="subject">
+        <h2 class="subject__title">
+            혼밥 음식 소개
+        </h2>
     </section>
     <br>
-    <button class="tag" onclick=SKFood()>한식</button>
-    <button class="tag" onclick=SJFood()>일식</button>
-    <button class="tag" onclick=SCFood()>중식</button>
-    <button class="tag" onclick=SWFood()>양식</button>
-    <button class="tag" onclick=SFFood()>분식</button>
-    <button class="tag" onclick=SEFood()>기타</button>
+    <div style="margin: 0 auto 0 auto; width: 870px;">
+        <button class="tag" onclick=SKFood()>한식</button>
+        <button class="tag" onclick=SJFood()>일식</button>
+        <button class="tag" onclick=SCFood()>중식</button>
+        <button class="tag" onclick=SWFood()>양식</button>
+        <button class="tag" onclick=SFFood()>분식</button>
+        <button class="tag" onclick=SEFood()>기타</button>
+    </div>
     <div id="K_Food">
-        <pre>
+        <h2>
+            <pre>
             비빔밥: 다다키친, 먹돌이식당
             덮밥: 오공복이
             알밥: 알촌
@@ -55,7 +53,8 @@
             김치찜: 마을회관
             국밥: 영진돼지국밥, 큰집돼지국밥, 형제국밥
             보쌈: 싸움의고수
-        </pre>
+            </pre>
+        </h2>
     </div>
     <div id="J_Food">
         <pre>
