@@ -106,6 +106,7 @@
 /* theme */
 #theme{
   display: flex;
+  margin: auto;
   flex-direction: column;
   background-color: #f1f1f5;
 }
@@ -115,7 +116,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
-  margin: 30px 20%;
+  margin: 30px auto 30px auto;
   width: 1000px;
   border: none;
   background-color: var(--color-white);

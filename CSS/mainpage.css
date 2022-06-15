@@ -85,7 +85,7 @@
 
 /* Home */
 #home {
-  background: url('/Web_7team-main/imgs/home-background.png') center/cover no-repeat;
+  background: url('../imgs/home-background.png') center/cover no-repeat;
   padding: 60px;
   text-align: center;
 }
