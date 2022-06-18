@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>오늘 뭐먹지</title>
-    <link rel="icon" type="image/png" href="./imgs/Icon.png" />
+    <link rel="icon" type="image/png" href="../imgs/Icon.png" />
     <script src="https://kit.fontawesome.com/13a6e4ab52.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/CSS/mainpage.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a8262cb781b6679ed5be8fbe80cdbc7"></script>
     <script src="/Js/mainpage.js" defer charset="utf-8"></script>
     <script language=JavaScript charset="utf-8">
         temp = location.href.split("?");
@@ -40,13 +41,42 @@
                     Name[i] = all[i].place_name;              
                     address[i] = all[i].road_address_name;                  
                     phone[i] = all[i].phone;             
-                    place_url[i] = all[i].place_url;                  
+                    place_url[i] = [all[i].x , all[i].y];                  
                     document.getElementById(name_id).innerHTML=Name[i];
                     document.getElementById(address_id).innerHTML=address[i];
                     document.getElementById(phone_id).innerHTML=phone[i];
                     document.getElementById(place_url_id).innerHTML=place_url[i];
+                    console.log(all)
+                    console.log(place_url)
                 }
             });
+        function Drawmap(clicked_id){
+            See()
+            console.log(clicked_id)
+            var Kk = clicked_id;
+            console.log(Kk)
+            n1 = Kk[1];
+            lat = place_url[n1][0]
+            lot = place_url[n1][1]
+            console.log(lat)
+            console.log(lot)
+            var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+                    mapOption = {
+                        center: new kakao.maps.LatLng(lot, lat), // 지도의 중심좌표
+                        level: 3, // 지도의 확대 레벨
+                        mapTypeId: kakao.maps.MapTypeId.ROADMAP // 지도종류
+                    };
+            var map = new kakao.maps.Map(mapContainer, mapOption);
+            var currentPos = new kakao.maps.LatLng(lot, lat); 
+            var marker = new kakao.maps.Marker({
+                position: currentPos
+            });
+            marker.setMap(map);
+        }
+        function See(){
+            var con = document.getElementById("map");
+            con.style.display = (con.style.display != 'none') ? "none" : "block";
+        }
     </script>
 </head>
 <body>
@@ -70,42 +100,45 @@
         </div>
     </section>
     <section id="selection">
-        <button class="selection__button" type="button">
+        <button id="s0" class="selection__button" onclick=Drawmap(this.id) type="button" style="border-radius: 15px; background-color: #FFB6C1;">
             <h3 id="name0"></h3>
             <h3 id="address0"></h3>
             <h3 id="phone0"></h3>
-            <p id="place_url0"></p>
+            <p id="place_url0" style="display: none;"></p>
         </button>
-        <button class="selection__button" type="button">
+        
+        <button id="s1" class="selection__button" onclick=Drawmap(this.id) type="button" style="border-radius: 15px; background-color: #FFB6C1;">
             <h3 id="name1"></h3>
             <h3 id="address1"></h3>
             <h3 id="phone1"></h3>
-            <p id="place_url1"></p>
+            <p id="place_url1" style="display: none;"></p>
+            <p>지도는 아래에 나와요!</p>
         </button>
-        <button class="selection__button" type="button">
+        <button id="s2" class="selection__button" onclick=Drawmap(this.id) type="button" style="border-radius: 15px; background-color: #FFB6C1;">
             <h3 id="name2"></h3>
             <h3 id="address2"></h3>
             <h3 id="phone2"></h3>
-            <p id="place_url2"></p>
+            <p id="place_url2" style="display: none;"></p>
         </button>
-        <button class="selection__button" type="button">
+        <button id="s3" class="selection__button" onclick=Drawmap(this.id) type="button" style="border-radius: 15px; background-color: #FFB6C1;">
             <h3 id="name3"></h3>
             <h3 id="address3"></h3>
             <h3 id="phone3"></h3>
-            <p id="place_url3"></p>
+            <p id="place_url3" style="display: none;"></p>
         </button>
-        <button class="selection__button" type="button">
+        <button id="s4" class="selection__button" onclick=Drawmap(this.id) type="button" style="border-radius: 15px; background-color: #FFB6C1;">
             <h3 id="name4"></h3>
             <h3 id="address4"></h3>
             <h3 id="phone4"></h3>
-            <p id="place_url4"></p>
+            <p id="place_url4" style="display: none;"></p>
         </button>
-        <button class="selection__button" type="button">
+        <button id="s5" class="selection__button" onclick=Drawmap(this.id) type="button" style="border-radius: 15px; background-color: #FFB6C1;">
             <h3 id="name5"></h3>
             <h3 id="address5"></h3>
             <h3 id="phone5"></h3>
-            <p id="place_url5"></p>
+            <p id="place_url5" style="display: none;"></p>
         </button>
+        <div id="map" style="width:1000px;height:350px; margin-bottom: 50px; display: none;"></div>
     </section>
     <script>
         document.getElementById("home__title").innerHTML=name;
