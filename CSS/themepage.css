@@ -147,3 +147,9 @@
 .box__title{
   font-weight: var(--weight-semi-bold);
 }
+.box__title:hover{
+  cursor: pointer;
+}
+.box__type:hover{
+  cursor: pointer;
+}

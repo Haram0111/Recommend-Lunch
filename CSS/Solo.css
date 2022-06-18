@@ -1,129 +1,157 @@
 :root {
-    /* Color */
-    --color-white: #ffffff;
-    --color-light-white: #eeeeee;
-    --color-dark-white: #bdbdbd;
-    --color-pink: #fe918d;
-    --color-dark-pink: #ff6863;
-    --color-dark-grey: #4d4d4d;
-    --color-grey: #616161;
-    --color-light-grey: #7c7979;
-    --color-blue: #73aace;
-    --color-yellow: #fff7d1;
-    --color-orange: #feb546;
-    --color-black: #000000;
-    --color-light-pink: #ff9f9f;
-  
-    /* Font size */
-    --font-large: 48px;
-    --font-medium: 28px;
-    --font-regular: 16.5px;
-    --font-small: 16px;
-    --font-micro: 14px;
-  
-    /* Font weight */
-    --weight-bold: 700;
-    --weight-semi-bold: 600;
-    --weight-regular: 400;
-  }
-  
-  body {
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      cursor: default;
-      box-sizing: border-box;
-  }
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-pink: #fe918d;
+  --color-dark-pink: #ff6863;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-blue: #73aace;
+  --color-yellow: #fff7d1;
+  --color-orange: #feb546;
+  --color-black: #000000;
+  --color-light-pink: #ff9f9f;
 
-  a {
-    text-decoration: none;
-    color: var(--color-light-pink);
-  }
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 16.5px;
+  --font-small: 16px;
+  --font-micro: 14px;
 
-  /* Typography */
-  
-  h1 {
-    font-size: var(--font-large);
-    font-weight: var(--weight-bold);
-    color: var(--color-black);
-    margin: 16px 0px;
-  }
-  
-  h2 {
-    font-size: var(--font-medium);
-    font-weight: var(--weight-semi-bold);
-    color: var(--color-black);
-    margin: 8px 0;
-  }
-  
-  h3 {
-    font-size: var(--font-regular);
-    font-weight: var(--weight-regular);
-    color: var(--color-black);
-    margin: 8px 0;
-  }
-  
-  p {
-    font-size: var(--font-regular);
-    font-weight: var(--weight-regular);
-    color: var(--color-black);
-    margin: 4px 0;
-  }
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+}
 
-  img {
-    width: 400px;
-    height: 310px;
-  }
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    cursor: default;
+    box-sizing: border-box;
+}
 
-  /* Navbar */
-  #navbar {
-      display: flex;
-      justify-content: space-between;
-      background-color: var(--color-white);
-      align-items: center;
-      padding: 10px;
-      box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-      position: relative;
-      z-index: 1;
-  }
+a {
+  text-decoration: none;
+  color: var(--color-light-pink);
+}
 
-  .navbar__logo {
-    font-size: var(--font-medium);
-    font-weight: var(--weight-semi-bold);
+/* Typography */
+
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 16px 0px;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 8px 0;
+}
+
+p {
+  font-weight: var(--weight-regular);
+  color: var(--color-black);
+  text-align: center;
+  margin: 4px 0;
+}
+
+img {
+  width: 300px;
+  height: 200px;
+  border-radius: 30px 30px 0 0;
+}
+
+/* Navbar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    position: relative;
+    z-index: 1;
+}
+
+.navbar__logo {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
 }
 #subject{
-    background-color: #feeaea;
-    text-align: center;
-    border-bottom: 1px solid #bdbdbd;
-  }
-  
-  .subject__title{
-    padding: 80px;
-    margin: 0;
-  }
-  
-.tag{
-    height: 50px;
-    width: 100px;
-    border-radius: 20px; 
-    background-color: white;
-    border-color: blue;
-    margin: 0 20px 0 20px;
+  background-color: #feeaea;
+  text-align: center;
+  border-bottom: 1px solid #bdbdbd;
 }
+
+.subject__title{
+  padding: 80px;
+  margin: 0;
+}
+
+/*음식설명박스*/
+.box__restaurant{
+  margin:40px 0 0 40px;
+  display: inline-block;
+  border: 1px solid #bdbdbd;
+  border-radius: 30px;
+}
+
+.box__title{
+  font-weight: var(--weight-semi-bold);
+  font-size: 25px;
+}
+
+.box__description{
+  font-weight: var(--weight-semi-bold); 
+  color: #4d4d4d;
+}
+
+/*button*/
+.tag{
+  height: 50px;
+  width: 100px;
+  border-radius: 20px; 
+  background-color: #ffffff;
+  border: 2px solid #fe918d;
+  font-weight: var(--weight-semi-bold);
+  margin: 0 20px 0 20px;
+}
+
 #K_Food{
-    display: none;
+  display: none;
+  margin: 20px 0 20px 60px;
 }
 #J_Food{
-    display: none;
+  display: none;
+  margin: 20px 0 20px 60px;
 }
 #C_Food{
-    display: none;
+  display: none;
+  margin: 20px 0 20px 60px;
 }
 #W_Food{
-    display: none;
+  display: none;
+  margin: 20px 0 20px 60px;
 }
 #F_Food{
-    display: none;
+  display: none;
+  margin: 20px 0 20px 60px;
 }
 #etc{
-    display: none;
+  display: none;
+  margin: 20px 0 20px 60px;
 }
