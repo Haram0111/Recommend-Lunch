@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="/Web_7team-main/CSS/mainpage.css">
         <script src="/Js/mainpage.js" defer  charset="utf-8"></script>
         <link rel="stylesheet" href="/CSS/mainpage.css">
+        <link rel="stylesheet" href="/CSS/Roulette.css">
         <script>
             var options = ['감자탕', '국밥', '부대찌개', '김치찌개', '김치찜', '삼겹살', '아귀찜', '찜닭', '곱창', '한정식'];
         </script>
@@ -40,12 +41,13 @@
                 </form>
             </div>
         </section>
-        <input id = "inputdata" />
-        <button id = "add">룰렛에 넣기</button>
+        
         <div>
             <section id="Roulette">
                 <canvas id="canvas" width="500" height="500"></canvas>
-                <input type="button" value="spin" id='spin' />
+                <input id = "inputdata" placeholder="음식을 입력하면 룰렛이 나타납니다" style="width: 250px; height: 50px"/>
+                <button id = "add" style="height: 56px">룰렛에 넣기</button>
+                <input type="button" value="spin" id='spin' style="top: 620px"/>
             </section>
         </div>
     </body>

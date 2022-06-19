@@ -102,13 +102,19 @@ img {
 }
 
 /* Roulette */
-#spin {
-  width: 100px;
-  height: 50px;
+#canvas {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-#canvas {
-  margin-left: 10%;
+#spin {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 50px;
+  top: 550px;
 }
 #add{
   width: 100px;
@@ -118,4 +124,14 @@ img {
   width: 100px;
   height: 50px;
   margin-left: 10%;
+}
+#inputdata{
+  position: absolute;
+  top: 800px;
+  left: 30%;
+}
+#add{
+  position: absolute;
+  top: 800px;
+  left: 53%;
 }

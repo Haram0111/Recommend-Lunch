@@ -1,5 +1,3 @@
-// const { ftruncate } = require("fs");
-
 var startAngle = 0;
 var arc = Math.PI / (options.length / 2);
 var spinTimeout = null;
@@ -62,7 +60,6 @@ function drawRouletteWheel() {
       var angle = startAngle + i * arc;
       //ctx.fillStyle = colors[i];
       ctx.fillStyle = getColor(i, options.length);
-      console.log(options.length)
       ctx.beginPath();
       ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
       ctx.arc(250, 250, insideRadius, angle + arc, angle, true);
@@ -74,7 +71,9 @@ function drawRouletteWheel() {
       ctx.shadowOffsetY = -1;
       ctx.shadowBlur    = 0;
       ctx.shadowColor   = "rgb(220,220,220)";
-      ctx.fillStyle = "black";
+      ctx.fillStyle = "white";
+      ctx.shaedowColor = "black";
+      ctx.shaedowBlur = "10";
       ctx.translate(250 + Math.cos(angle + arc / 2) * textRadius, 
                     250 + Math.sin(angle + arc / 2) * textRadius);
       ctx.rotate(angle + arc / 2 + Math.PI / 2);
