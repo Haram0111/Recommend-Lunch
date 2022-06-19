@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/CSS/themepage.css">
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a8262cb781b6679ed5be8fbe80cdbc7"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/Js/weather.js"></script>
 </head>
 <body>
      <!-- Navbar -->
@@ -24,126 +27,193 @@
     <!-- subject -->
     <section id="subject">
         <h2 class="subject__title">
-            날씨별 식당 추천
+            오늘 날씨 식당 추천
         </h2>
+        <p id="weather"></p>
     </section>
 
     <!-- theme -->
     <section id="theme">
         <!-- 음식종류1 -->
         <div class="theme__box">
-            <div class="box__type">전</div>
+            <div id="foodmenu0" class="box__type"></div>
             <div class="theme__smallbox">
                 <div class="box__restaurant">
-                    <a href="detailpage.html">
-                        <img src="./imgs/weather.jpg" alt="식당 이미지">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
                     </a>
-                    <p class="box__title">식당이름</p>
-                    <p class="box__length">거리</p>
-                    <p class="box__description">설명</p>
+                    <p id="0_name0" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="0_address0" class="box__length">주소</p>
+                    <p id="0_phone0"class="box__description">번호</p>
+                    <p id="0_place0"class="box__description" style="display: none;">번호</p>
                 </div>
                 <div class="box__restaurant">
-                    <a href="detailpage.html">
-                        <img src="./imgs/weather.jpg" alt="식당 이미지">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
                     </a>
-                    <p class="box__title">식당이름</p>
-                    <p class="box__length">거리</p>
-                    <p class="box__description">설명</p>
+                    <p id="0_name1" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="0_address1" class="box__length">주소</p>
+                    <p id="0_phone1"class="box__description">번호</p>
+                    <p id="0_place1"class="box__description" style="display: none;">번호</p>
                 </div>
                 <div class="box__restaurant">
-                    <a href="detailpage.html">
-                        <img src="./imgs/weather.jpg" alt="식당 이미지">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
                     </a>
-                    <p class="box__title">식당이름</p>
-                    <p class="box__length">거리</p>
-                    <p class="box__description">설명</p>
+                    <p id="0_name2" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="0_address2" class="box__length">주소</p>
+                    <p id="0_phone2"class="box__description">번호</p>
+                    <p id="0_place2"class="box__description" style="display: none;">번호</p>
                 </div>
                 <div class="box__restaurant">
-                    <a href="detailpage.html">
-                        <img src="./imgs/weather.jpg" alt="식당 이미지">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
                     </a>
-                    <p class="box__title">식당이름</p>
-                    <p class="box__length">거리</p>
-                    <p class="box__description">설명</p>
+                    <p id="0_name3" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="0_address3" class="box__length">주소</p>
+                    <p id="0_phone3"class="box__description">번호</p>
+                    <p id="0_place3"class="box__description" style="display: none;">번호</p>
                 </div>
+            </div>
+            <div id="0mappop" style="display: none; margin: 0 0 4% 3%;">
+                <div id="0map" style="width:940px;height:350px;"></div>
             </div>
         </div>
 
         <!-- 음식종류2 -->
         <div class="theme__box">
-            <div class="box__type">부대찌개</div>
+            <div id="foodmenu1" class="box__type"></div>
             <div class="theme__smallbox">
                 <div class="box__restaurant">
-                    <a href="detailpage.html">
-                        <img src="./imgs/weather.jpg" alt="식당 이미지">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
                     </a>
-                    <p class="box__title">식당이름</p>
-                    <p class="box__length">거리</p>
-                    <p class="box__description">설명</p>
+                    <p id="1_name0" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="1_address0" class="box__length">주소</p>
+                    <p id="1_phone0"class="box__description">번호</p>
+                    <p id="1_place0"class="box__description" style="display: none;">번호</p>
                 </div>
                 <div class="box__restaurant">
-                    <a href="detailpage.html">
-                        <img src="./imgs/weather.jpg" alt="식당 이미지">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
                     </a>
-                    <p class="box__title">식당이름</p>
-                    <p class="box__length">거리</p>
-                    <p class="box__description">설명</p>
+                    <p id="1_name1" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="1_address1" class="box__length">주소</p>
+                    <p id="1_phone1"class="box__description">번호</p>
+                    <p id="1_place1"class="box__description" style="display: none;">번호</p>
                 </div>
                 <div class="box__restaurant">
-                    <a href="detailpage.html">
-                        <img src="./imgs/weather.jpg" alt="식당 이미지">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
                     </a>
-                    <p class="box__title">식당이름</p>
-                    <p class="box__length">거리</p>
-                    <p class="box__description">설명</p>
+                    <p id="1_name2" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="1_address2" class="box__length">주소</p>
+                    <p id="1_phone2"class="box__description">번호</p>
+                    <p id="1_place2"class="box__description" style="display: none;">번호</p>
                 </div>
                 <div class="box__restaurant">
-                    <a href="detailpage.html">
-                        <img src="./imgs/weather.jpg" alt="식당 이미지">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
                     </a>
-                    <p class="box__title">식당이름</p>
-                    <p class="box__length">거리</p>
-                    <p class="box__description">설명</p>
+                    <p id="1_name3" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="1_address3" class="box__length">주소</p>
+                    <p id="1_phone3"class="box__description">번호</p>
+                    <p id="1_place3"class="box__description" style="display: none;">번호</p>
                 </div>
+            </div>
+            <div id="1mappop" style="display: none; margin: 0 0 4% 3%;">
+                <div id="1map" style="width:940px;height:350px;"></div>
             </div>
         </div>
 
         <!-- 음식종류3 -->
         <div class="theme__box">
-            <div class="box__type">수제비</div>
+            <div id="foodmenu2" class="box__type"></div>
             <div class="theme__smallbox">
                 <div class="box__restaurant">
-                    <a href="detailpage.html">
-                        <img src="./imgs/weather.jpg" alt="식당 이미지">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
                     </a>
-                    <p class="box__title">식당이름</p>
-                    <p class="box__length">거리</p>
-                    <p class="box__description">설명</p>
+                    <p id="2_name0" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="2_address0" class="box__length">주소</p>
+                    <p id="2_phone0"class="box__description">번호</p>
+                    <p id="2_place0"class="box__description" style="display: none;">번호</p>
                 </div>
                 <div class="box__restaurant">
-                    <a href="detailpage.html">
-                        <img src="./imgs/weather.jpg" alt="식당 이미지">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
                     </a>
-                    <p class="box__title">식당이름</p>
-                    <p class="box__length">거리</p>
-                    <p class="box__description">설명</p>
+                    <p id="2_name1" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="2_address1" class="box__length">주소</p>
+                    <p id="2_phone1"class="box__description">번호</p>
+                    <p id="2_place1"class="box__description" style="display: none;">번호</p>
                 </div>
                 <div class="box__restaurant">
-                    <a href="detailpage.html">
-                        <img src="./imgs/weather.jpg" alt="식당 이미지">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
                     </a>
-                    <p class="box__title">식당이름</p>
-                    <p class="box__length">거리</p>
-                    <p class="box__description">설명</p>
+                    <p id="2_name2" class="box__title"onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="2_address2" class="box__length">주소</p>
+                    <p id="2_phone2"class="box__description">번호</p>
+                    <p id="2_place2"class="box__description" style="display: none;">번호</p>
                 </div>
                 <div class="box__restaurant">
-                    <a href="detailpage.html">
-                        <img src="./imgs/weather.jpg" alt="식당 이미지">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
                     </a>
-                    <p class="box__title">식당이름</p>
-                    <p class="box__length">거리</p>
-                    <p class="box__description">설명</p>
+                    <p id="2_name3" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="2_address3" class="box__length">주소</p>
+                    <p id="2_phone3"class="box__description">번호</p>
+                    <p id="2_place3"class="box__description" style="display: none;">번호</p>
                 </div>
+            </div>
+            <div id="2mappop" style="display: none; margin: 0 0 4% 3%;">
+                <div id="2map" style="width:940px;height:350px;"></div>
+            </div>
+        </div>
+        <!-- 음식종류4 -->
+        <div class="theme__box">
+            <div id="foodmenu3" class="box__type"></div>
+            <div class="theme__smallbox">
+                <div class="box__restaurant">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
+                    </a>
+                    <p id="3_name0" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="3_address0" class="box__length">주소</p>
+                    <p id="3_phone0"class="box__description">번호</p>
+                    <p id="3_place0"class="box__description" style="display: none;">번호</p>
+                </div>
+                <div class="box__restaurant">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
+                    </a>
+                    <p id="3_name1" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="3_address1" class="box__length">주소</p>
+                    <p id="3_phone1"class="box__description">번호</p>
+                    <p id="3_place1"class="box__description" style="display: none;">번호</p>
+                </div>
+                <div class="box__restaurant">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
+                    </a>
+                    <p id="3_name2" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="3_address2" class="box__length">주소</p>
+                    <p id="3_phone2"class="box__description">번호</p>
+                    <p id="3_place2"class="box__description" style="display: none;">번호</p>
+                </div>
+                <div class="box__restaurant">
+                    <a>
+                        <img src="/imgs/weather.jpg" alt="식당 이미지">
+                    </a>
+                    <p id="3_name3" class="box__title" onclick=sendFunc(this.id)>식당이름</p>
+                    <p id="3_address3" class="box__length">주소</p>
+                    <p id="3_phone3"class="box__description">번호</p>
+                    <p id="3_place3"class="box__description" style="display: none;">번호</p>
+                </div>
+            </div>
+            <div id="3mappop" style="display: none; margin: 0 0 4% 3%;">
+                <div id="3map" style="width:940px;height:350px;"></div>
             </div>
         </div>
     </section>

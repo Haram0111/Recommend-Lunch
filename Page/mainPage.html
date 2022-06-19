@@ -13,10 +13,23 @@
     <link rel="stylesheet" href="../CSS/mainpage.css">
     <script src="../Js/mainpage.js" defer  charset="utf-8"></script>
     <script  charset="utf-8">
+        const url = 'https://api.openweathermap.org/data/2.5/weather?lat=35.134080249513474&lon=129.10317348438963&lang=kr&appid=39cecfff4fc160b196d696e6671bfbb5&units=metric';
+        
+        dataPane = document.getElementById("weather");
+        
+        fetch(url)
+        .then(res => res.json())
+        .then(resJson => {
+            temp = "현재온도: " + resJson.main.temp;
+            temp = temp + "\t날씨: "+ resJson.weather[0].main;
+            document.getElementById("weather").innerHTML=temp;
+            
+            description = resJson.weather[0].description;
+
+        })
         function sendFunc(){
             name =  document.getElementById("search__text").value;
             jumsu = 100;
-            console.log(name)
             location.href="Searchpage.html?"+name+":"+jumsu;
         }
     </script>
@@ -34,6 +47,7 @@
     <!-- Home -->
     <section id="home">
         <h1 id="home__title">오늘 뭐먹지?!</h1>
+        <p id="weather"></p>
         <div class="home__searchbox">
             <form action="" method="Get">
                 <input id="search__text" type="text" placeholer="Type to search">
